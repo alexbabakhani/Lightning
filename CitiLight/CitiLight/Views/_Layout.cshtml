@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="title">@(PageData["title"] ?? "Citi Lightning")</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@PageData["description"]">
+    <meta name="author" content="">
+    <title>Citi Lightning</title>
+    <link href="Assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Assets/css/citi.css" rel="stylesheet">
+    <link href="Assets/css/ui-layout.css" rel="stylesheet">
+    <link href="Assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+</head>
+<body id="page-top" class="index">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">
+                    <img src="Assets/img/global_header_logo.png" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav nav-bar-center">
+                    <li>
+                        <a href="#strategy" target="_self">Strategy</a>
+                    </li>
+                    <li>
+                        <a href="#transaction" target="_self">Transactions</a>
+                    </li>
+                    <li>
+                        <a href="#livemarketdata" target="_self">Live Market</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" target="_self">Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header></header>
+
+
+    <section ui-view data-tmpl-url="HomeCtrl">
+           @RenderBody()
+
+    </section>
+
+
+
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Citi Lightning 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    @Scripts.Render("~/js/app")
+    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="Assets/js/bootstrap.min.js"></script>
+    <script src="Assets/js/classie.js"></script>
+    <script src="Assets/js/jqBootstrapValidation.js"></script>
+    <script src="Assets/js/freelancer.js"></script>
+    <script src="Assets/js/CitiChart.js"></script>
+    <script src="Scripts/dataTable.js"></script>
+</body>
+</html>
+
+

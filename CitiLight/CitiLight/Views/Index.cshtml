@@ -1,0 +1,176 @@
+﻿@{
+    PageData["title"] = "Citi Lightning | Live Market Data";
+}
+
+<section id="strategy" class="sectionStrategy">
+    <div id="row">
+
+        <h3><center>Strategy</center></h3>
+        <form class="navbar-form navbar-header" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="StrategyTicker" placeholder="Search Ticker">
+            </div>
+            <button type="submit" ng-click="AddStrategy(StrategyTicker)" class="btn btn-success">Add Stock to Strategy Queue</button>
+        </form>
+        <p class="bg-danger">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Ticker</th>
+                    <th>Strategy</th>
+                    <th>Short Average</th>
+                    <th>Long Average</th>
+                    <th>% Change</th>
+                    <th>Amount of shares</th>
+                </tr>
+                <tr ng-repeat="item in CartData |orderBy : 'numberOfShares'">
+                    <td>
+                        <b>
+                            {{item.ticker}}
+                        </b>
+                    </td>
+                    <td>
+                        <select>
+                            <option>Two Moving Averages&nbsp;&nbsp;</option>
+                        </select>
+                    </td>
+                    <td><input type="text" ng-model="item.shortPosition" name="Min" ng-required="true" /></td>
+                    <td><input type="text" ng-model="item.longPosition" name="Max" ng-required="true" /></td>
+                    <td><input type="text" ng-model="item.percentChange" name="PercentChange" ng-required="true" /></td>
+                    <td><input type="text" ng-model="item.numberOfShares" name="AmountOfShares" ng-required="true" /></td>
+                    <td>
+                        <div ng-if="item.strategyActive == 0">
+                            <button type="submit" value="Play" class="btn btn-success btn-sm" ng-click="Play(item.id,item.ticker,item.shortPosition,item.longPosition,item.percentChange,item.numberOfShares)">Execute</button>
+                        </div>
+                        <div ng-if="item.strategyActive == 1 ">
+                            <button type="submit" value="Stop" class="btn btn-danger btn-sm" ng-click="Stop(item.id,item.ticker,item.shortPosition,item.longPosition,item.percentChange,item.numberOfShares)">Stop</button>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="submit" value="Delete" class="btn btn-danger btn-sm" ng-click="DeleteStrategy(item.id)">Delete</button>
+
+                    </td>
+                </tr>
+            </table>
+        </p>
+
+    </div>
+</section>
+
+
+<section id="transaction" class="sectionTransactions">
+    <div id="row">
+
+        <h3><center>Transactions</center></h3>
+        <table class="table table-hover table-bordered" id="transData">
+            <tr>
+                <th>Id</th>
+                <th>Price</th>
+                <th>Strategy</th>
+                <th>Timestamp</th>
+                <th>Symbol</th>
+                <th>Status</th>
+                <th>Size</th>
+                <th>Buy</th>
+            </tr>
+            <tr ng-repeat="trans in TransactionTableData">
+                <td><b>{{ trans.id }}</b></td>
+                <td>{{ trans.price }}</td>
+                <td>{{ trans.strategy }}</td>
+                <td>{{ trans.timestamp}}</td>
+                <td>{{ trans.symbol}}</td>
+                <td>{{ trans.status}}</td>
+                <td>{{ trans.size}}</td>
+                <td>{{ trans.buy}}</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+
+<section id="livemarketdata" class="sectionLiveMarket">
+
+    <div class="row">
+        <h3><center>Live market data</center></h3>
+            <div class="col-xs-6">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" ng-model="tickerGraphSearch" class="form-control" placeholder="Search Ticker">
+                    </div>
+                    <button type="submit" ng-click="LoadGraph(tickerGraphSearch); showme=true" class="btn btn-default">Search</button>
+                    <button type="submit" ng-click="AddStrategy(tickerGraphSearch)" class="btn btn-success">Add Stock to Strategy Queue</button>
+                </form>
+                <div ng-show="showme">
+                    <table class="table table-hover table-bordered">
+                        <tr>
+                            <th>Symbol:</th>
+                            <td><b>{{ TickerSpecific.Symbol }}</b></td>
+                        </tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{ TickerSpecific.Name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Price:</th>
+                            <td>{{ TickerSpecific.Price }}</td>
+                        </tr>
+                        <tr>
+                            <th>Open:</th>
+                            <td>{{ TickerSpecific.Open}}</td>
+                        </tr>
+                        <tr>
+                            <th>Change:</th>
+                            <td ng-style="setColorIndividualTicker(TickerSpecific.Change)"><b>{{ TickerSpecific.Change}}</b></td>
+                        </tr>
+                        <tr>
+                            <th>P/E Ratio:</th>
+                            <td>{{TickerSpecific.PeRatio}}</td>
+                        </tr>
+                        <tr>
+                            <th>Market Cap</th>
+                            <td>{{ TickerSpecific.MarketCap}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+           
+                </div>
+        <div class="col-xs-6" ng-show="showme">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <canvas id="MarketDataGraph" width="550" height="450"></canvas>
+                </div>
+            </div>
+        </div>
+            </div>
+
+</section>
+
+
+<section id="portfolio" class="sectionPortfolio">
+    <div class="row">
+        <h3><center>Portfolio</center></h3>
+        <br />
+        <div class="col-xs-6">
+            <center><canvas id="PieChartPortfolio" width="700" height="400"></canvas></center>
+        </div>
+        <div class="col-xs-6">
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Open</th>
+                    <th>Change</th>
+                </tr>
+                <tr ng-repeat="item in data2">
+                    <td><b>{{ item.Symbol }}</b></td>
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Price }}</td>
+                    <td>{{ item.Open}}</td>
+                    <td ng-style="setColor(item)"><b>{{ item.Change}}</b></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</section>

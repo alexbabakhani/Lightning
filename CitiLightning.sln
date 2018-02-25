@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLightning_REST", "CitiLightning\CitiLightning_REST.csproj", "{6EE072BB-FD5E-430E-A2E6-BFF8E176BADA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A6035CFD-3685-486C-BF82-9608661A9CA7} = {A6035CFD-3685-486C-BF82-9608661A9CA7}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{DF7C6702-F4FF-4B34-9C6D-95028965FF5A}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{B0A52C19-325E-4520-B5E1-449B58283807}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\CitiLightning-WAWS-dev.json = PublishScripts\Configurations\CitiLightning-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLighting_Algorithms", "CitiLighting_Algorithms\CitiLighting_Algorithms.csproj", "{73AF13FB-6036-47F0-AB9F-4198B54B5C05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLight", "CitiLight\CitiLight\CitiLight.csproj", "{A6035CFD-3685-486C-BF82-9608661A9CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLightning_YahooFinance", "CitiLightning_YahooFinance\CitiLightning_YahooFinance.csproj", "{E23A7EEA-DE09-4D8E-963B-1EB2E4573CB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{64CB2F2D-F26D-482A-8C3F-0E119F064C0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLightning_BrokerMessaging", "CitiLightning_BrokerMessaging\CitiLightning_BrokerMessaging.csproj", "{FCCB719C-CC15-4AEF-B9D5-3A82A8FC69D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLightningDatabase", "CitiLightningDatabase\CitiLightningDatabase.csproj", "{79D68618-9716-43FB-BE55-3B7E90BF1CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiLightning_BusinessLogic", "CitiLightning_BusinessLogic\CitiLightning_BusinessLogic.csproj", "{531E67F9-CE0E-43AF-84FC-4FE1159D6F8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EE072BB-FD5E-430E-A2E6-BFF8E176BADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE072BB-FD5E-430E-A2E6-BFF8E176BADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE072BB-FD5E-430E-A2E6-BFF8E176BADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE072BB-FD5E-430E-A2E6-BFF8E176BADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AF13FB-6036-47F0-AB9F-4198B54B5C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AF13FB-6036-47F0-AB9F-4198B54B5C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AF13FB-6036-47F0-AB9F-4198B54B5C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AF13FB-6036-47F0-AB9F-4198B54B5C05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6035CFD-3685-486C-BF82-9608661A9CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6035CFD-3685-486C-BF82-9608661A9CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6035CFD-3685-486C-BF82-9608661A9CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6035CFD-3685-486C-BF82-9608661A9CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E23A7EEA-DE09-4D8E-963B-1EB2E4573CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23A7EEA-DE09-4D8E-963B-1EB2E4573CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23A7EEA-DE09-4D8E-963B-1EB2E4573CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23A7EEA-DE09-4D8E-963B-1EB2E4573CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64CB2F2D-F26D-482A-8C3F-0E119F064C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CB2F2D-F26D-482A-8C3F-0E119F064C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CB2F2D-F26D-482A-8C3F-0E119F064C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CB2F2D-F26D-482A-8C3F-0E119F064C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCB719C-CC15-4AEF-B9D5-3A82A8FC69D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCB719C-CC15-4AEF-B9D5-3A82A8FC69D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCB719C-CC15-4AEF-B9D5-3A82A8FC69D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCB719C-CC15-4AEF-B9D5-3A82A8FC69D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D68618-9716-43FB-BE55-3B7E90BF1CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D68618-9716-43FB-BE55-3B7E90BF1CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D68618-9716-43FB-BE55-3B7E90BF1CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D68618-9716-43FB-BE55-3B7E90BF1CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531E67F9-CE0E-43AF-84FC-4FE1159D6F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531E67F9-CE0E-43AF-84FC-4FE1159D6F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531E67F9-CE0E-43AF-84FC-4FE1159D6F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531E67F9-CE0E-43AF-84FC-4FE1159D6F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0A52C19-325E-4520-B5E1-449B58283807} = {DF7C6702-F4FF-4B34-9C6D-95028965FF5A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,54 @@
+﻿@{
+    PageData["title"] = "Citi Lightning | Execute";
+}
+<h3><center>Strategy</center></h3>
+
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Ticker</th>
+        <th>Strategy</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Amount of shares</th>
+    </tr>
+    <tr ng-repeat="item in CartData">
+        
+        <td>
+            <b>
+                {{item.Symbol}}
+            </b>
+        </td>
+        <td>
+            <select>
+                <option >Two Moving Averages&nbsp;&nbsp;</option>
+            </select>
+        </td>
+        <td><input type="text" ng-model="min" name="Min" ng-required="true" /></td>
+        <td><input type="text" ng-model="max" name="Max" ng-required="true" /></td>
+        <td><input type="text" ng-model="shares" name="AmountOfShares" ng-required="true" /></td>
+        <td>
+            <button type="submit" value="Play" class="btn btn-success" ng-click="Play(item.Symbol,min,max,shares)">Execute</button>
+        </td>
+    </tr>
+</table>
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,10 @@
+﻿@{
+ 
+    Layout = Request.AppRelativeCurrentExecutionFilePath.StartsWith("~/views/") ? null : "~/Views/_Layout.cshtml";
+
+  
+    if (Request.RequestContext.RouteData.DataTokens["templateUrl"] == "/views/404")
+    {
+        Response.StatusCode = 404;
+    }
+}

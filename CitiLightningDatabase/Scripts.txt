@@ -1,0 +1,51 @@
+﻿CREATE TABLE [dbo].[Portfolios] (
+    [Id]             INT             IDENTITY (1, 1) NOT NULL,
+    [UserID]         INT             NULL,
+    [TransactionID]         INT        NULL,
+    [PortfolioID] INT          NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[Strategies] (
+    [Id]       INT           NOT NULL IDENTITY,
+    [Ticker]      VARCHAR (10)  NOT NULL,
+    [Name]     VARCHAR (255) NULL,
+    [LongPosition]     INT           NULL,
+    [ShortPosition]    INT           NULL,
+    [StartDate]        DATETIME      NULL,
+    [EndDate]          DATETIME      NULL,
+    [NumberOfShares]   INT           NULL,
+    [PercentChange] decimal(18,4)        NULL,
+	[StrategyActive]   BIT           NULL,
+    [UserId] INT NOT NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Tickers] (
+    [Id]     INT           IDENTITY (1, 1) NOT NULL,
+    [Name]   VARCHAR (MAX) NULL,
+    [Symbol] VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Transactions] (
+    [Id]        INT          IDENTITY (1, 1) NOT NULL,
+    [Price]     MONEY        NOT NULL,
+    [Strategy]  VARCHAR (50) NULL,
+    [Timestamp] DATETIME     NOT NULL,
+    [Symbol]    VARCHAR (6)  NOT NULL,
+    [Status]    VARCHAR (50) NULL,
+    [UserId] INT NOT NULL, 
+    [Size] INT NULL, 
+    [Buy] BIT NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+CREATE TABLE [dbo].[Users] (
+    [Id]          INT NOT NULL,
+    [UserId]      INT NULL,
+    [PortfolioID] INT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
